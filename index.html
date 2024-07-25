@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Profit Chart</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="controls">
+        <label for="start-date">Başlangıç Tarihi:</label>
+        <input type="date" id="start-date">
+        <label for="end-date">Bitiş Tarihi:</label>
+        <input type="date" id="end-date">
+        <button onclick="calculateProfit()">Hesapla</button>
+    </div>
+    <div class="chart-wrapper">
+        <div class="chart-container">
+            <div id="container"></div>
+        </div>
+        <div class="chart-container">
+            <h2>Stock Comparison</h2>
+            <form id="stockForm">
+                <label for="stock1">Stock 1:</label>
+                <select id="stock1" name="stock1" required>
+                    <option value="BTCUSD">BTCUSD</option>
+                    <option value="Crude_Oil">Crude Oil</option>
+                    <option value="Dow_Jones">Dow Jones</option>
+                    <option value="ETH">Ethereum</option>
+                    <option value="EURUSD">EUR/USD</option>
+                    <option value="Gold">Gold</option>
+                    <option value="NASDAQ_100">NASDAQ 100</option>
+                    <option value="Silver">Silver</option>
+                    <option value="SP500">S&P 500</option>
+                    <option value="USD_Index">USD Index</option>
+                </select>
+                <br>
+                <label for="stock2">Stock 2:</label>
+                <select id="stock2" name="stock2" required>
+                    <option value="BTCUSD">BTCUSD</option>
+                    <option value="Crude_Oil">Crude Oil</option>
+                    <option value="Dow_Jones">Dow Jones</option>
+                    <option value="ETH">Ethereum</option>
+                    <option value="EURUSD">EUR/USD</option>
+                    <option value="Gold">Gold</option>
+                    <option value="NASDAQ_100">NASDAQ 100</option>
+                    <option value="Silver">Silver</option>
+                    <option value="SP500">S&P 500</option>
+                    <option value="USD_Index">USD Index</option>
+                </select>
+                <br>
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" required>
+                <br>
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" name="endDate" required>
+                <br>
+                <button type="button" onclick="fetchData()">Compare</button>
+            </form>
+            <div id="container2"></div>
+        </div>
+    </div>
+    <div id="sliders">
+        <table>
+            <tr>
+                <td>Alpha Angle</td>
+                <td><input id="alpha" type="range" min="0" max="45" value="10" step="1"/></td>
+                <td><span id="alpha-value" class="value"></span></td>
+            </tr>
+            <tr>
+                <td>Beta Angle</td>
+                <td><input id="beta" type="range" min="0" max="45" value="10" step="1"/></td>
+                <td><span id="beta-value" class="value"></span></td>
+            </tr>
+            <tr>
+                <td>Depth</td>
+                <td><input id="depth" type="range" min="20" max="100" value="70" step="1"/></td>
+                <td><span id="depth-value" class="value"></span></td>
+            </tr>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
