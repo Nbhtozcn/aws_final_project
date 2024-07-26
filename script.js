@@ -78,19 +78,19 @@ document.addEventListener('DOMContentLoaded', function() {
   const chart1 = new Highcharts.Chart('container', chartOptions);
   const chart2 = new Highcharts.Chart('container2', chartOptions);
 
-  function showValues(chart) {
-      document.getElementById('alpha-value').innerHTML = chart.options.chart.options3d.alpha;
-      document.getElementById('beta-value').innerHTML = chart.options.chart.options3d.beta;
-      document.getElementById('depth-value').innerHTML = chart.options.chart.options3d.depth;
-  }
+//   function showValues(chart) {
+//       document.getElementById('alpha-value').innerHTML = chart.options.chart.options3d.alpha;
+//       document.getElementById('beta-value').innerHTML = chart.options.chart.options3d.beta;
+//       document.getElementById('depth-value').innerHTML = chart.options.chart.options3d.depth;
+//   }
 
-  document.querySelectorAll('#sliders input').forEach(input => input.addEventListener('input', e => {
-      chart1.options.chart.options3d[e.target.id] = parseFloat(e.target.value);
-      chart2.options.chart.options3d[e.target.id] = parseFloat(e.target.value);
-      showValues(chart1);
-      chart1.redraw(false);
-      chart2.redraw(false);
-  }));
+//   document.querySelectorAll('#sliders input').forEach(input => input.addEventListener('input', e => {
+//       chart1.options.chart.options3d[e.target.id] = parseFloat(e.target.value);
+//       chart2.options.chart.options3d[e.target.id] = parseFloat(e.target.value);
+//       showValues(chart1);
+//       chart1.redraw(false);
+//       chart2.redraw(false);
+//   }));
 
   showValues(chart1);
 
