@@ -10,15 +10,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="controls">
-        <label for="start-date">Başlangıç Tarihi:</label>
-        <input type="date" id="start-date">
-        <label for="end-date">Bitiş Tarihi:</label>
-        <input type="date" id="end-date">
-        <button onclick="calculateProfit()">Hesapla</button>
-    </div>
+   
     <div class="chart-wrapper">
         <div class="chart-container">
+            <div class="controls">
+                <label for="start-date">Başlangıç Tarihi:</label>
+                <input type="date" id="start-date">
+                <label for="end-date">Bitiş Tarihi:</label>
+                <input type="date" id="end-date">
+                <button onclick="calculateProfit()">Hesapla</button>
+            </div>
             <div id="container"></div>
         </div>
         <div class="chart-container">
@@ -63,7 +64,7 @@
             <div id="container2"></div>
         </div>
     </div>
-    <div id="sliders">
+    <!-- <div id="sliders">
         <table>
             <tr>
                 <td>Alpha Angle</td>
@@ -81,7 +82,7 @@
                 <td><span id="depth-value" class="value"></span></td>
             </tr>
         </table>
-    </div>
+    </div> -->
     <script src="script.js"></script>
 </body>
 </html>
